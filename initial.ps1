@@ -1,6 +1,6 @@
 $pcname = Read-Host "Digite o nome do PC"
 Rename-Computer -NewName $pcname
-
+. $PROFILE
 Write-Host "Habilitando o powershell remote e execução de scripts"
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSWindowsUpdate -Force
