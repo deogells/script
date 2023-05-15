@@ -1,0 +1,8 @@
+Office
+apps
+initial.bat
+kyocera.zip
+option.txt
+remote-install.ps1
+startup.exe
+ultimo script.exe
