@@ -19,21 +19,20 @@ net localgroup "usuários" $env:USERNAME /add
 
 Write-Host "Instalando o Anydesk"  
 
-Start-Process "choco install anydesk.install -y" 
+choco install anydesk.install -y 
 
 Write-Host "Instalando o Google Chrome"  
-Start-Process "choco install googlechrome -y"
+choco install googlechrome -y
 
 Write-Host "Instalando o Google Drive Desktop"  
 Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
 Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
 
 Write-Host "Instalando o Microsoft Office"  
-Start-Process "choco install office365bussiness -y"
+choco install office365bussiness -y
 
 Write-Host "Instalando o Adobe Reader"  
-  
-Start-Process "choco install adobereader -y"  
+choco install adobereader -y 
 
 Write-Host "Instalando o Kaspersky Free"  
 Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
