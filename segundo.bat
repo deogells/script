@@ -1,2 +1,3 @@
-pwsh . "%temp%\initial.ps1"
-exit
+pwsh  "%temp%\reload-profile.ps1"
+pwsh  "%temp%\initial.ps1"
+
