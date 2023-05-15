@@ -1,2 +1,2 @@
-pwsh "%temp%\initial.ps1"
+pwsh . "%temp%\initial.ps1"
 exit
