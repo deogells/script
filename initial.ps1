@@ -16,6 +16,8 @@ net user administrador "M1r4nt3$2023"
 net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
 
+Write-Host "Instalando powershell 7"
+choco install powershell-core
 
 Write-Host "Instalando o Anydesk"  
 
