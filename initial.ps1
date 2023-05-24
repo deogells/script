@@ -52,8 +52,8 @@ $PrinterRecepcao = @{
     Verbose    = $true
 }
 $PrinterDP = @{
-    DriverName = "Microsoft XPS Class Driver"
-    Name       = "HP Color Laserjet - DP" 
+    DriverName = "HP Color LaserJet Pro M478f-9f PCL-6 (V4)"
+    Name       = "HP Color Laserjet Pro M478f-9f - DP" 
     PortName   = (Get-PrinterPort -Name TCPPort2:*).Name
     Verbose    = $true
 }
