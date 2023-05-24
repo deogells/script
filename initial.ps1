@@ -1,6 +1,6 @@
 $pcname = Read-Host "Digite o nome do PC"
 Rename-Computer -NewName $pcname
-. $PROFILE
+
 Write-Host "Habilitando o powershell remote e execução de scripts"
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSWindowsUpdate -Force
@@ -16,8 +16,10 @@ net user administrador "M1r4nt3$2023"
 net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
 
+Write-Host "Instalando Chocolatey"
+
 Write-Host "Instalando powershell 7"
-choco install powershell-core
+choco install powershell-core -y
 
 Write-Host "Instalando o Anydesk"  
 
