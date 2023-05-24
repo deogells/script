@@ -16,6 +16,9 @@ net user administrador "M1r4nt3$2023"
 net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
 
+Write-Host "Setando wallpaper"
+set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value %windir%\Web\Wallpaper\Windows\pinacoteca.jpg
+
 Write-Host "Instalando Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
