@@ -59,7 +59,7 @@ Start-Process "$Env:TEMP\printer\mfp4103.exe"
 pnputil.exe /add-driver "$Env:TEMP\m478f\hpclC62A4_x64.inf" /install
 pnputil.exe /add-driver "$Env:TEMP\mfp4103\hplo03744_x64.inf" /install
 
-copy "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
+Copy-Item "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
 shutdown -r -t 5
