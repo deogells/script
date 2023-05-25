@@ -1,4 +1,8 @@
 
 powershell Set-ExecutionPolicy bypass
 
-powershell %userprofile%\Desktop\printer\add-printer.ps1
+powershell %temp%\printer\add-printer.ps1
+ 
+powershell %temp%\printer\printerFIN.ps1
+powershell %temp%\printer\PrinterCMP.ps1  
+

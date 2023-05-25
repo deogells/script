@@ -40,37 +40,27 @@ choco install googledrive /NoGsuiteIcons -y
 #Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
 
 Write-Host "Instalando o Microsoft Office"  
-choco install office365business -y
+choco install office365business /configpath $Env:TEMP\printer\Officeconfig.xml -y
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
 
+Write-Host "Instalando Winrar"
+choco install winrar -y
 Write-Host "Instalando o Kaspersky Free"  
 Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
 
-
 Write-Host "Instalando impressoras"
-Remove-Printer "HP Universal Printing PCL6"  
-
-choco install hp-universal-print-driver-pcl -y
-
-Add-PrinterPort -Name "TCPPort2:" -PrinterHostAddress "192.168.88.6" -ErrorAction SilentlyContinue
 
 Start-Process "$Env:TEMP\printer\m3540idn.exe"
 
-$PrinterDP = @{
-    DriverName = "HP Universal Printing PCL6 (v7.0.1)"
-    Name       = "HP Color Laserjet Pro M478f-9f - DP" 
-    PortName   = (Get-PrinterPort -Name TCPPort2:*).Name
-    Verbose    = $true
-}
+Start-Process "$Env:TEMP\printer\m478f.exe"
+Start-Process "$Env:TEMP\printer\mfp4103.exe"
+pnputil.exe /add-driver "$Env:TEMP\m478f\hpclC62A4_x64.inf" /install
+pnputil.exe /add-driver "$Env:TEMP\mfp4103\hplo03744_x64.inf" /install
 
-Add-Printer @PrinterDP
+copy "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
- Unblock-File -Path $Env:TEMP\printer\printerFIN.ps1  
-.\printer\printerFIN.ps1  
-Unblock-File -Path $Env:TEMP\printer\printerPROT.ps1  
-.\printer\printerPROT.ps1  
-
-
+Write-host "O sistema será reinicializado, por favor aguarde...."
+shutdown -r -t 5
 
