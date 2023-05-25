@@ -56,9 +56,7 @@ choco install hp-universal-print-driver-pcl -y
 
 Add-PrinterPort -Name "TCPPort2:" -PrinterHostAddress "192.168.88.6" -ErrorAction SilentlyContinue
 
-Invoke-WebRequest https://institutomirante-my.sharepoint.com/personal/deogells_colares_institutomirante_onmicrosoft_com/_layouts/15/download.aspx?UniqueId=ebf324f2-297a-44b1-8b0c-d33edf444bab -OutFile $Env:TEMP\m3540idn.exe
 Start-Process "$Env:TEMP\printer\m3540idn.exe"
-
 
 $PrinterDP = @{
     DriverName = "HP Universal Printing PCL6 (v7.0.1)"
@@ -68,9 +66,6 @@ $PrinterDP = @{
 }
 
 Add-Printer @PrinterDP
-
-Add-Printer @PrinterRecepcao
-
 
  Unblock-File -Path $Env:TEMP\printer\printerFIN.ps1  
 .\printer\printerFIN.ps1  
