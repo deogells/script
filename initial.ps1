@@ -34,7 +34,7 @@ Write-Host "Instalando o Google Chrome"
 choco install googlechrome -y
 
 Write-Host "Instalando o Google Drive Desktop"  
-choco install googledrive /noGsuiteIcons
+choco install googledrive /NoGsuiteIcons -y
 
 #Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
 #Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
