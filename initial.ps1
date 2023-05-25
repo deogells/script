@@ -49,7 +49,10 @@ Write-Host "Instalando o Kaspersky Free"
 Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
 
 
-Write-Host "Instalando impressoras"  
+Write-Host "Instalando impressoras"
+Remove-Printer "HP Universal Printing PCL6"  
+
+choco install hp-universal-print-driver-pcl -y
 
 Add-PrinterPort -Name "TCPPort2:" -PrinterHostAddress "192.168.88.6" -ErrorAction SilentlyContinue
 
@@ -58,7 +61,7 @@ Start-Process "$Env:TEMP\printer\m3540idn.exe"
 
 
 $PrinterDP = @{
-    DriverName = "HP Color LaserJet Pro M478f-9f PCL-6 (V4)"
+    DriverName = "HP Universal Printing PCL6 (v7.0.1)"
     Name       = "HP Color Laserjet Pro M478f-9f - DP" 
     PortName   = (Get-PrinterPort -Name TCPPort2:*).Name
     Verbose    = $true

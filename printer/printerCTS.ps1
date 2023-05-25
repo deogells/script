@@ -36,7 +36,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
 Add-PrinterPort -Name "TCPPort4:" -PrinterHostAddress "192.168.88.7" -ErrorAction SilentlyContinue
 $PrinterProt = @{
-    DriverName = "Microsoft XPS Class Driver"
+    DriverName = "HP Universal Printing PCL6 (v7.0.1)"
     Name       = "HP LaserJet Pro MFP 410 - COMPRAS" 
     PortName   = (Get-PrinterPort -Name TCPPort4:*).Name
     Verbose    = $true
