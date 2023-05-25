@@ -34,13 +34,5 @@ $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-Add-PrinterPort -Name "TCPPort3:" -PrinterHostAddress "192.168.88.7" -ErrorAction SilentlyContinue
-$PrinterFin = @{
-    DriverName = "Microsoft XPS Class Driver"
-    Name       = "KYOCERA M2640idw - FINANCEIRO" 
-    PortName   = (Get-PrinterPort -Name TCPPort3:*).Name
-    Verbose    = $true
-}
-
-Add-Printer @PrinterFin
+Invoke-WebRequest https://institutomirante-my.sharepoint.com/personal/deogells_colares_institutomirante_onmicrosoft_com/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fdeogells%5Fcolares%5Finstitutomirante%5Fonmicrosoft%5Fcom%2FDocuments%2Fimpressoras%2Fm2640idw%2Eexe -OutFile $Env:TEMP\printer\m2640idw.exe
 }
