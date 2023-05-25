@@ -21,7 +21,7 @@ Write-Host "Setando wallpaper"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value %windir%\Web\Wallpaper\Windows\pinacoteca.jpg
 
 Write-Host "Instalando Chocolatey"
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 Write-Host "Instalando powershell 7"
 choco install powershell-core -y
