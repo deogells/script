@@ -1,4 +1,4 @@
-cls
+Clear-Host
 $pcname = Read-Host "Digite o nome do PC"
 Rename-Computer -NewName $pcname
 
