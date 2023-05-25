@@ -34,8 +34,10 @@ Write-Host "Instalando o Google Chrome"
 choco install googlechrome -y
 
 Write-Host "Instalando o Google Drive Desktop"  
-Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
-Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
+choco install googledrive /noGsuiteIcons
+
+#Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
+#Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
 
 Write-Host "Instalando o Microsoft Office"  
 choco install office365business -y
