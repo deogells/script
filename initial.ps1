@@ -34,7 +34,7 @@ Write-Host "Instalando o Google Chrome"
 choco install googlechrome -y
 
 Write-Host "Instalando o Google Drive Desktop"  
-choco install googledrive /noGsuiteIcons -y
+choco install googledrive /noGsuiteIcons
 
 #Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
 #Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
@@ -51,17 +51,12 @@ Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"
 
 Write-Host "Instalando impressoras"  
 
-Add-PrinterPort -Name "TCPPort1:" -PrinterHostAddress "192.168.88.5" -ErrorAction SilentlyContinue
 Add-PrinterPort -Name "TCPPort2:" -PrinterHostAddress "192.168.88.6" -ErrorAction SilentlyContinue
 
-Add-printerDriver -name "Microsoft XPS Class Driver"
+Invoke-WebRequest https://institutomirante-my.sharepoint.com/personal/deogells_colares_institutomirante_onmicrosoft_com/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fdeogells%5Fcolares%5Finstitutomirante%5Fonmicrosoft%5Fcom%2FDocuments%2Fimpressoras%2Fm3540idn%2Eexe -OutFile $Env:TEMP\m3540idn.exe
+Start-Process "$Env:TEMP\printer\m3540idn.exe"
 
-$PrinterRecepcao = @{
-    DriverName = "Microsoft XPS Class Driver"
-    Name       = "Kyocera M3540idn - RECEPÇÃO" 
-    PortName   = (Get-PrinterPort -Name TCPPort1:*).Name
-    Verbose    = $true
-}
+
 $PrinterDP = @{
     DriverName = "HP Color LaserJet Pro M478f-9f PCL-6 (V4)"
     Name       = "HP Color Laserjet Pro M478f-9f - DP" 
