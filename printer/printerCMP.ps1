@@ -33,11 +33,8 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-
-
-
-Add-PrinterDriver -Name "HP LaserJet Pro MFP 4101 4102 4103 4104 PCL-6 (v4)"
 {
+Add-PrinterDriver -Name "HP LaserJet Pro MFP 4101 4102 4103 4104 PCL-6 (v4)"
 Add-PrinterPort -Name "TCPPort4:" -PrinterHostAddress "192.168.88.7" -ErrorAction SilentlyContinue
 $PrinterCMP = @{
     DriverName = "HP LaserJet Pro MFP 4101 4102 4103 4104 PCL-6 (v4)"
