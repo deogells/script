@@ -38,7 +38,7 @@ Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.
 Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
 
 Write-Host "Instalando o Microsoft Office"  
-choco install office365bussiness -y
+choco install office365business -y
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
