@@ -28,9 +28,11 @@ Start-Process "$Env:TEMP\printer\m478f.exe" -Wait
 Start-Process "$Env:TEMP\printer\mfp4103.exe" -Wait
 
 Write-Host "Instalando driver hp colorida"
-Start-Process -FilePath “pnputil.exe” -ArgumentList "/add-driver  $Env:TEMP\m478f\hpclC62A4_x64.inf  /install"
-Write-Host "Instalando driver hp colorida"
-Start-Process -FilePath “pnputil.exe” -ArgumentList "/add-driver $Env:TEMP\mfp4103\hplo03744_x64.inf /install"
+
+Start-Process "$Env:TEMP\pnputil.exe" -ArgumentList "/add-driver  $Env:TEMP\m478f\hpclC62A4_x64.inf  /install"
+
+Write-Host "Instalando driver hp Mono"
+Start-Process "$Env:TEMP\pnputil.exe" -ArgumentList "/add-driver $Env:TEMP\mfp4103\hplo03744_x64.inf /install"
 
 Write-Host "Instalando Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -64,7 +66,7 @@ choco install winrar -y
 Copy-Item "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Write-Host "Instalando o Kaspersky Free"  
-Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
+Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait
 
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
