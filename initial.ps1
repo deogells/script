@@ -70,5 +70,6 @@ Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait
 
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
+timeout /t 5 /NOBREAK
 shutdown -r -t 5
 
