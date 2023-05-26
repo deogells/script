@@ -18,7 +18,16 @@ net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
 
 Write-Host "Setando wallpaper"
-set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value %windir%\Web\Wallpaper\Windows\pinacoteca.jpg
+set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value "%windir%\Web\Wallpaper\Windows\pinacoteca.jpg"
+
+Write-Host "Instalando impressoras"
+
+Start-Process "$Env:TEMP\printer\m3540idn.exe" -Wait
+
+Start-Process "$Env:TEMP\printer\m478f.exe" -Wait
+Start-Process "$Env:TEMP\printer\mfp4103.exe" -Wait
+pnputil.exe /add-driver "$Env:TEMP\m478f\hpclC62A4_x64.inf" /install -Wait
+pnputil.exe /add-driver "$Env:TEMP\mfp4103\hplo03744_x64.inf" /install -Wait
 
 Write-Host "Instalando Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -47,15 +56,6 @@ choco install adobereader -y
 
 Write-Host "Instalando Winrar"
 choco install winrar -y
-
-Write-Host "Instalando impressoras"
-
-Start-Process "$Env:TEMP\printer\m3540idn.exe"
-
-Start-Process "$Env:TEMP\printer\m478f.exe"
-Start-Process "$Env:TEMP\printer\mfp4103.exe"
-pnputil.exe /add-driver "$Env:TEMP\m478f\hpclC62A4_x64.inf" /install
-pnputil.exe /add-driver "$Env:TEMP\mfp4103\hplo03744_x64.inf" /install
 
 Copy-Item "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
