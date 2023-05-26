@@ -47,8 +47,6 @@ choco install adobereader -y
 
 Write-Host "Instalando Winrar"
 choco install winrar -y
-Write-Host "Instalando o Kaspersky Free"  
-Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
 
 Write-Host "Instalando impressoras"
 
@@ -60,6 +58,10 @@ pnputil.exe /add-driver "$Env:TEMP\m478f\hpclC62A4_x64.inf" /install
 pnputil.exe /add-driver "$Env:TEMP\mfp4103\hplo03744_x64.inf" /install
 
 Copy-Item "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
+
+Write-Host "Instalando o Kaspersky Free"  
+Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus"   
+
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
 shutdown -r -t 5
