@@ -49,7 +49,8 @@ choco install googledrive /NoGsuiteIcons -y
 #Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
 
 Write-Host "Instalando o Microsoft Office"  
-choco install office365business /configpath $Env:TEMP\printer\Officeconfig.xml -y
+
+./$Env:temp\Office\Install-Office365Suite.ps1
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
