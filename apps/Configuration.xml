@@ -1,9 +1,0 @@
-<Configuration>
-  <Add OfficeClientEdition="64" Channel="Broad">
-    <Product ID="O365SmallBusPremRetail">
-      <Language ID="pt-br" />
-    </Product>
-  </Add>
-  <Display Level="None" AcceptEULA="TRUE" />
-  <Property Name="AUTOACTIVATE" Value="1" />
-</Configuration>

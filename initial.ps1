@@ -55,7 +55,7 @@ choco install googledrive /NoGsuiteIcons -y
 
 Write-Host "Instalando o Microsoft Office"  
 
-./$Env:temp\Office\Install-Office365Suite.ps1
+Start-Process $Env:temp\Office\Install-Office365Suite.exe -Wait
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
