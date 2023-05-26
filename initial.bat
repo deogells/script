@@ -1,4 +1,9 @@
+%temp%\printer\m478f.exe && pnputil.exe /add-driver %temp%\m478f\hpclC62A4_x64.inf /install
+
+%temp%\printer\mfp4103.exe && pnputil.exe /add-driver %temp%\mfp4103\hplo03744_x64.inf /install
+
 powershell Set-ExecutionPolicy bypass
-powershell Start-Process powershell -Verb RunAs -ArgumentList "%temp%\pwsh.ps1", "-Wait" 
-wt pwsh Start-Process powershell -Verb RunAs -ArgumentList "%temp%\initial.ps1"
+
+powershell "%temp%\initial.ps1"
+
 exit
