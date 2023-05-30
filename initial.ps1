@@ -48,10 +48,7 @@ Write-Host "Instalando o Google Chrome"
 choco install googlechrome -y
 
 Write-Host "Instalando o Google Drive Desktop"  
-choco install googledrive /NoGsuiteIcons -y
-
-#Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveFileStream.exe -OutFile $env:TEMP\GoogleDriveFileStream.exe 
-#Start-Process $env:TEMP\GoogleDriveFileStream.exe "/quiet"
+choco install googledrive --install-arguments "/NoGsuiteIcons" -y
 
 Write-Host "Instalando o Microsoft Office"  
 
@@ -71,5 +68,5 @@ Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
 timeout /t 5 /NOBREAK
-shutdown -r -t 5
+shutdown -r -t 0
 
