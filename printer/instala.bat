@@ -1,8 +1,6 @@
 
 powershell Set-ExecutionPolicy bypass
 
-powershell %temp%\printer\add-printer.ps1 -wait
- 
-powershell %temp%\printer\printerFIN.ps1 -wait
-powershell %temp%\printer\PrinterCMP.ps1  -wait
+powershell Start-process powershell -Verb runAS %temp%\printer\add-printer.ps1 -wait
+
 
