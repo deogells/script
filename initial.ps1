@@ -1,5 +1,5 @@
 Clear-Host
-$PSDefaultParameterValues['*:Encoding'] = 'utf8'
+set-itemproperty -path "HKCM:SYSTEM\CurrentControlSet\Control\Nls\CodePage" -name OEMCP -value "65001"
 $pcname = Read-Host "Digite o nome do PC"
 Rename-Computer -NewName $pcname
 
