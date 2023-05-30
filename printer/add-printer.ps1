@@ -10,3 +10,4 @@ $PrinterDP = @{
 }
 
 Add-Printer @PrinterDP
+Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera M3540idw - RECEPÇÃO"
