@@ -34,6 +34,6 @@ $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-Start-Process %systemdrive%\temp\printer\m2640idw.exe -Wait
+Start-Process $Env:SystemDrive\temp\printer\m2640idw.exe -Wait
 Rename-Printer -Name "Kyocera ECOSYS M2640idw KX" -NewName "Kyocera M2640idw - FINANCEIRO"
 }
