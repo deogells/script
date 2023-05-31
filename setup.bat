@@ -5,7 +5,7 @@ echo "Normalizando usuários"
 net user administrador /active:yes
 net user administrador 'M1r4nt3$2023'
 net localgroup "administradores" %USERNAME% /del
-net localgroup "usuarios" %USERNAME% /add
+net localgroup "usuários" %USERNAME% /add
 
 
 
