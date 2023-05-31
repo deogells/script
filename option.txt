@@ -1,5 +1,5 @@
-Path=%temp%
-Setup="%temp%\setup.bat"
+Path=%systemdrive%\temp
+Setup="%systemdrive%\temp\setup.bat"
 Silent=1
 Overwrite=1
 Update=U
