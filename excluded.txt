@@ -5,4 +5,9 @@ kyocera.zip
 option.txt
 remote-install.ps1
 startup.exe
-ultimo script.exe
+"ultimo script.exe"
+"option.txt"
+"initial.bat"
+"exclude.txt"
+"teste.bat"
+"remote-install.ps1"
