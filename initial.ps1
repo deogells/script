@@ -16,17 +16,17 @@ set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value "%win
 
 Write-Host "Instalando impressoras"
 
-Start-Process "%systemdrive%\temp\printer\m3540idn.exe" -Wait
+Start-Process "$Env:SYSTEMDRIVE\temp\printer\m3540idn.exe" -Wait
 
-Start-Process "%systemdrive%\temp\printer\m478f.exe" -Wait
-Start-Process "%systemdrive%\temp\printer\mfp4103.exe" -Wait
+Start-Process "$Env:SYSTEMDRIVE\temp\printer\m478f.exe" -Wait
+Start-Process "$Env:SYSTEMDRIVE\temp\printer\mfp4103.exe" -Wait
 
 Write-Host "Instalando driver hp colorida"
 
-Start-Process "%systemdrive%\temp\pnputil.exe" -ArgumentList "/add-driver  %systemdrive%\temp\m478f\hpclC62A4_x64.inf  /install"
+Start-Process "$Env:SYSTEMDRIVE\temp\pnputil.exe" -ArgumentList "/add-driver  $Env:SYSTEMDRIVE\temp\m478f\hpclC62A4_x64.inf  /install"
 
 Write-Host "Instalando driver hp Mono"
-Start-Process "%systemdrive%\temp\pnputil.exe" -ArgumentList "/add-driver %systemdrive%\temp\mfp4103\hplo03744_x64.inf /install"
+Start-Process "$Env:SYSTEMDRIVE\temp\pnputil.exe" -ArgumentList "/add-driver $Env:SYSTEMDRIVE\temp\mfp4103\hplo03744_x64.inf /install"
 
 Write-Host "Instalando Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -46,7 +46,7 @@ choco install googledrive --install-arguments "/NoGsuiteIcons" -y
 
 Write-Host "Instalando o Microsoft Office"  
 
-Start-Process %systemdrive%\temp\Office\Install-Office365Suite.exe -Wait
+Start-Process $Env:SYSTEMDRIVE\temp\Office\Install-Office365Suite.exe -Wait
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
@@ -54,7 +54,7 @@ choco install adobereader -y
 Write-Host "Instalando Winrar"
 choco install winrar -y
 
-Copy-Item "%systemdrive%\temp\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
+Copy-Item "$Env:SYSTEMDRIVE\temp\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Write-Host "Instalando o Kaspersky Free"  
 Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait

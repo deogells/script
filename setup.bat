@@ -1,6 +1,8 @@
 powershell set-itemproperty -path "HKLM:SYSTEM\CurrentControlSet\Control\Nls\CodePage" -name OEMCP -value "65001"
 %systemdrive%\temp\wallpaper.exe
 
+@CHCP 1252 >NUL
+
 echo "Normalizando usuários"
 net user administrador /active:yes
 net user administrador 'M1r4nt3$2023'

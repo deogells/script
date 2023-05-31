@@ -13,8 +13,8 @@ Add-Printer @PrinterDP
 Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera M3540idn - RECEPCAO"
 
  
-powershell $Env:TEMP\printer\printerFIN.ps1 -wait
-powershell $Env:TEMP\printer\PrinterCMP.ps1  -wait
+powershell $Env:SystemDrive\printer\printerFIN.ps1 -wait
+powershell $Env:SystemDrive\printer\PrinterCMP.ps1  -wait
 
 Remove-Item  '$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup\instala.bat'
 Remove-Item  '$Env:Windir\temp'
