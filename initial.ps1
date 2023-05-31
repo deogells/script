@@ -11,12 +11,6 @@ Set-ExecutionPolicy bypass
 Write-Host "Alterando o perfil de rede"
 Set-NetConnectionProfile -name "Instituto_Mirante" -NetworkCategory private
 
-Write-Host "Normalizando usuários"
-net user administrador /active:yes
-net user administrador 'M1r4nt3$2023'
-net localgroup "administradores" $env:USERNAME /del
-net localgroup "usuarios" $env:USERNAME /add
-
 Write-Host "Setando wallpaper"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value "%windir%\Web\Wallpaper\Windows\pinacoteca.jpg"
 
