@@ -10,7 +10,7 @@ $PrinterDP = @{
 }
 
 Add-Printer @PrinterDP
-Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera M3540idw - RECEPCAO"
+Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera M3540idn - RECEPCAO"
 
  
 powershell $Env:TEMP\printer\printerFIN.ps1 -wait

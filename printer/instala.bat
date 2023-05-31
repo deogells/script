@@ -1,6 +1,6 @@
 
-powershell Set-ExecutionPolicy bypass
+powershell Set-ExecutionPolicy bypass -Scope CurrentUser
 
-powershell Start-process powershell -Verb runAS %temp%\printer\add-printer.ps1 -wait
+runas /noprofile /user:administrador "powershell.exe -command %temp%\printer\add-printer.ps1"
 
 
