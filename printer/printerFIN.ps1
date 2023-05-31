@@ -34,6 +34,14 @@ $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-Start-Process $Env:SystemDrive\temp\printer\m2640idw.exe -Wait
-Rename-Printer -Name "Kyocera ECOSYS M2640idw KX" -NewName "Kyocera M2640idw - FINANCEIRO"
-}
+    Add-PrinterDriver -Name "HP LaserJet Pro MFP 4101 4102 4103 4104 PCL-6 (v4)"
+    Add-PrinterPort -Name "TCPPort4:" -PrinterHostAddress "192.168.88.8" -ErrorAction SilentlyContinue
+
+    $PrinterFIN = @{
+        DriverName = "HP LaserJet Pro MFP 4101 4102 4103 4104 PCL-6 (v4)"
+        Name       = "HP LaserJet Pro MFP 4103 - FINANCEIRO" 
+        PortName   = (Get-PrinterPort -Name TCPPort4:*).Name
+        Verbose    = $true
+    }
+Add-Printer @PrinterFIN
+}    
