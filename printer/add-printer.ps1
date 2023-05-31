@@ -17,7 +17,7 @@ Pause
 & "$Env:Systemdrive\temp\printer\printerCMP.ps1" -Wait
 
 Pause
-Remove-Item  "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup\instala.bat" -Recurse -Confirm -Force
-Remove-Item  "$Env:SystemDrive\temp" -Recurse -Confirm -Force
+Remove-Item  -Recurse -Confirm:$false -Force "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup\instala.bat"
+Remove-Item  -Recurse -Confirm:$false -Force "$Env:SystemDrive\temp" 
 
 Pause
