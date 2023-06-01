@@ -18,8 +18,8 @@ Write-Host "Instalando impressoras"
 
 Start-Process "$Env:SYSTEMDRIVE\temp\printer\m3540idn.exe" -Wait
 
-Start-Process "$Env:SYSTEMDRIVE\temp\printer\m478f.exe" -Wait
 Start-Process "$Env:SYSTEMDRIVE\temp\printer\mfp4103.exe" -Wait
+Start-Process "$Env:SYSTEMDRIVE\temp\printer\m478f.exe" -Wait
 
 Write-Host "Instalando driver hp colorida"
 
