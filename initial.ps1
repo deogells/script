@@ -1,4 +1,6 @@
 ﻿Clear-Host
+Start-Process $Env:SYSTEMDRIVE\temp\wallpaper.exe
+
 $pcname = Read-Host "Digite o nome do PC"
 Rename-Computer -NewName $pcname
 
