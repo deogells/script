@@ -11,3 +11,7 @@ startup.exe
 "exclude.txt"
 "teste.bat"
 "remote-install.ps1"
+"initial.ps1"
+"add-printer.ps1"
+"printerCMP.ps1"
+"printerFIN.ps1"
