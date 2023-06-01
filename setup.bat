@@ -9,5 +9,4 @@
  net localgroup "usuários" %USERNAME% /add
 
 powershell set-executionpolicy bypass
-powershell  "%systemdrive%\temp\initial.ps1"
-
+"%systemdrive%\temp\initial.exe"
