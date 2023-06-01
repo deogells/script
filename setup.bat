@@ -1,6 +1,5 @@
 @CHCP 65001 >NUL
 @echo off
-%systemdrive%\temp\wallpaper.exe
 
  echo "Normalizando usuários"
  net user administrador /active:yes
