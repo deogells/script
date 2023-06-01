@@ -43,7 +43,7 @@ $PrinterDP = @{
 }
 
 Add-Printer @PrinterDP
-Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera M3540idn - RECEPCAO"
+Rename-Printer -Name "Kyocera ECOSYS M3540idn KX" -NewName "Kyocera ECOSYS M3540idn - RECEPCAO"
 
 Start-Process $Env:Systemdrive\temp\printer\printerFIN.exe -wait
 Start-Process $Env:Systemdrive\temp\printer\printerCMP.exe -Wait
