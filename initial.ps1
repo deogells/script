@@ -26,10 +26,10 @@ Start-Process $Env:SYSTEMDRIVE\temp\printer\m478f.exe -Wait
 
 Write-Host "Instalando driver hp colorida"
 
-Start-Process "$Env:SYSTEMDRIVE\temp\pnputil.exe" -ArgumentList "/add-driver  $Env:SYSTEMDRIVE\temp\m478f\hpclC62A4_x64.inf  /install"
+Start-Process "pnputil.exe" -ArgumentList "/add-driver  $Env:SYSTEMDRIVE\temp\m478f\hpclC62A4_x64.inf  /install"
 
 Write-Host "Instalando driver hp Mono"
-Start-Process "$Env:SYSTEMDRIVE\temp\pnputil.exe" -ArgumentList "/add-driver $Env:SYSTEMDRIVE\temp\mfp4103\hplo03744_x64.inf /install"
+Start-Process "pnputil.exe" -ArgumentList "/add-driver $Env:SYSTEMDRIVE\temp\mfp4103\hplo03744_x64.inf /install"
 
 Write-Host "Instalando Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))

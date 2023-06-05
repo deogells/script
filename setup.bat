@@ -7,7 +7,6 @@
  net localgroup "administradores" %USERNAME% /del
  net localgroup "usuários" %USERNAME% /add
 
-powershell set-executionpolicy bypass
 "%systemdrive%\temp\printer\mfp4103.exe"
 "%systemdrive%\temp\printer\m478f.exe"
 "%systemdrive%\temp\initial.exe"
