@@ -54,7 +54,8 @@ choco install googledrive /NoGsuiteIcons -y
 
 Write-Host "Instalando o Microsoft Office"  
 
-Start-Process $Env:temp\Office\Install-Office365Suite.exe -Wait
+#Start-Process $Env:temp\Office\Install-Office365Suite.exe -Wait
+choco install office365business -y
 
 Write-Host "Instalando o Adobe Reader"  
 choco install adobereader -y 
@@ -62,7 +63,7 @@ choco install adobereader -y
 Write-Host "Instalando Winrar"
 choco install winrar -y
 
-Copy-Item "$Env:TEMP\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
+Copy-Item "$Env:systemdrive\temp\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Write-Host "Instalando o Kaspersky Free"  
 Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait
