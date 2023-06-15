@@ -1,4 +1,3 @@
-@CHCP 65001 >NUL
 @echo off
 
  echo "Normalizando usuários"
