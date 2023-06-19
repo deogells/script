@@ -18,6 +18,8 @@ net user administrador /active:yes
 net user administrador 'M1r4nt3$2023'
 net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
+Update-MgUser -UserId $env:USERNAME -PasswordPolicies DisablePasswordExpiration -PassThru
+
 
 Write-Host "Setando wallpaper"
 Start-Process $Env:SYSTEMDRIVE\temp\wallpaper.exe
