@@ -66,7 +66,7 @@ choco install winrar -y
 Copy-Item "$Env:systemdrive\temp\printer\instala.bat" "$Env:ALLUSERSPROFILE\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Write-Host "Instalando o Kaspersky Free"  
-Start-Process chrome.exe "https://www.kaspersky.com.br/free-antivirus" -Wait
+Start-Process chrome.exe "https://www.kaspersky.com.br/downloads/free-antivirus" -Wait
 
 
 Write-host "O sistema será reinicializado, por favor aguarde...."
