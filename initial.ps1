@@ -15,19 +15,17 @@ Set-NetConnectionProfile -name "Instituto_Mirante" -NetworkCategory private
 
 Write-Host "Normalizando usuários"
 net user administrador /active:yes
-net user administrador "M1r4nt3$2023"
+net user administrador 'M1r4nt3$2023'
 net localgroup "administradores" $env:USERNAME /del
 net localgroup "usuários" $env:USERNAME /add
 
 Write-Host "Setando wallpaper"
+Start-Process $Env:SYSTEMDRIVE\temp\wallpaper.exe
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value "%windir%\Web\Wallpaper\Windows\pinacoteca.jpg"
 
 Write-Host "Instalando impressoras"
 
 Start-Process "$Env:SYSTEMDRIVE\temp\printer\m3540idn.exe" -Wait
-
-Start-Process "$Env:SYSTEMDRIVE\temp\printer\m478f.exe" -Wait
-Start-Process "$Env:SYSTEMDRIVE\temp\printer\mfp4103.exe" -Wait
 
 Write-Host "Instalando driver hp colorida"
 
